@@ -10,4 +10,14 @@ import { Character } from '../../interfaces/character';
 })
 export class CharacterCardComponent {
   @Input() character!: Character;
+
+  constructor() {
+    this.character = {
+      id: 0,
+      name: '',
+      status: '',
+      species: '',
+      image: ''
+    }
+  }
 }

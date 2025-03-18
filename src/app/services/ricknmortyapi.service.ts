@@ -17,12 +17,12 @@ export class RicknmortyapiService {
 
   constructor(private http: HttpClient) { }
 
-  getNextPage(): Observable<ApiResponse> {
-    throw new Error("Not implemented exception");
+  getNextPage(page: number = 1): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.nextUrl ? this.nextUrl : ApiUrl)
   }
 
-  getPreviousPage(): Observable<ApiResponse> {
-    throw new Error("Not implemented exception");
+  getPreviousPage(page: number = 1): Observable<ApiResponse> {
+    return this.http.get<ApiResponse>(this.previousUrl ? this.previousUrl : ApiUrl)
   }
 }
 
