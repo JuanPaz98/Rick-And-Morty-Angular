@@ -17,11 +17,11 @@ export class RicknmortyapiService {
 
   constructor(private http: HttpClient) { }
 
-  getNextPage(page: number = 1): Observable<ApiResponse> {
+  getNextPage(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.nextUrl ? this.nextUrl : ApiUrl)
   }
 
-  getPreviousPage(page: number = 1): Observable<ApiResponse> {
+  getPreviousPage(): Observable<ApiResponse> {
     return this.http.get<ApiResponse>(this.previousUrl ? this.previousUrl : ApiUrl)
   }
 }

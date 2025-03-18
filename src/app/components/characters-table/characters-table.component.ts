@@ -25,11 +25,10 @@ export class CharactersTableComponent {
   fetchNextPage(): void {
     this.api.getNextPage().subscribe(
      (res) => {
-      this.characters = res.results;
+      this.characters = res.characters;
       this.api.nextUrl = res.info.next
       this.hasNextPage = !!res.info.next
       this.hasPreviousPage = !!res.info.prev
-      console.log(res.results)
      }
     );
   }
@@ -37,11 +36,11 @@ export class CharactersTableComponent {
   fetchPreviousPage(): void {
     this.api.getPreviousPage().subscribe(
       (res) => {
-       this.characters = res.results;
+       this.characters = res.characters;
        this.api.previousUrl = res.info.prev
        this.hasPreviousPage = !!res.info.prev
-       console.log(this.characters)
       }
      );
   }
+
 }

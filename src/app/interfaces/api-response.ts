@@ -5,5 +5,5 @@ export interface ApiResponse {
     info: Info,
     hasNextPage: boolean,
     hasPreviousPage: boolean,
-    results: Character[]
+    characters: Character[]
 }
