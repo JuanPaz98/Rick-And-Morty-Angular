@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome Headless 134.0.0.0 (Windows 10)" package="unit" timestamp="2025-03-18T23:29:46" id="0" hostname="DESKTOP-J5K5HNN" tests="27" errors="0" failures="0" time="0.107">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/134.0.0.0 Safari/537.36"/>
+  </properties>
+  <testcase name="CharacterCardComponent should have the unorder list classes" time="0.043" classname=".CharacterCardComponent"/>
+  <testcase name="CharacterCardComponent should have card body classes" time="0.003" classname=".CharacterCardComponent"/>
+  <testcase name="CharacterCardComponent should have the span classes" time="0.002" classname=".CharacterCardComponent"/>
+  <testcase name="CharacterCardComponent should have the list item classes" time="0.002" classname=".CharacterCardComponent"/>
+  <testcase name="CharacterCardComponent should initialize by default character" time="0.003" classname=".CharacterCardComponent"/>
+  <testcase name="CharacterCardComponent should show character properties" time="0.002" classname=".CharacterCardComponent"/>
+  <testcase name="CharacterCardComponent should have card main classes" time="0.002" classname=".CharacterCardComponent"/>
+  <testcase name="CharacterCardComponent should have img setted up" time="0.002" classname=".CharacterCardComponent"/>
+  <testcase name="CharactersTableComponent buttons should have the required classes" time="0.012" classname=".CharactersTableComponent"/>
+  <testcase name="CharactersTableComponent should call fetchNextPage when Next Page is clicked" time="0.004" classname=".CharactersTableComponent"/>
+  <testcase name="CharactersTableComponent should has the required structure" time="0.002" classname=".CharactersTableComponent"/>
+  <testcase name="CharactersTableComponent should call fetchPreviousPage when Previous Page is clicked" time="0.002" classname=".CharactersTableComponent"/>
+  <testcase name="CharactersTableComponent should enable/disable the Next Page button" time="0.002" classname=".CharactersTableComponent"/>
+  <testcase name="CharactersTableComponent should call the api getPreviousPage method on fetchPreviousPage" time="0.002" classname=".CharactersTableComponent"/>
+  <testcase name="CharactersTableComponent should call the api getNextPage method on fetchNextPage" time="0.002" classname=".CharactersTableComponent"/>
+  <testcase name="CharactersTableComponent should set data after ngOnInit resolves" time="0.003" classname=".CharactersTableComponent"/>
+  <testcase name="CharactersTableComponent should enable/disable the Previous Page button" time="0.002" classname=".CharactersTableComponent"/>
+  <testcase name="RicknmortyapiService should map navigation urls" time="0.007" classname=".RicknmortyapiService"/>
+  <testcase name="RicknmortyapiService should call api with Default Url when nextUrl is empty" time="0.001" classname=".RicknmortyapiService"/>
+  <testcase name="RicknmortyapiService should return hasNextPage as true" time="0.001" classname=".RicknmortyapiService"/>
+  <testcase name="RicknmortyapiService should return hasNextPage as false" time="0.001" classname=".RicknmortyapiService"/>
+  <testcase name="RicknmortyapiService should return hasPreviousPage as false" time="0.001" classname=".RicknmortyapiService"/>
+  <testcase name="RicknmortyapiService should extract character information from response" time="0.001" classname=".RicknmortyapiService"/>
+  <testcase name="RicknmortyapiService should call api with Default Url when previousUrl is empty" time="0.001" classname=".RicknmortyapiService"/>
+  <testcase name="RicknmortyapiService should return hasPreviousPage as true" time="0.002" classname=".RicknmortyapiService"/>
+  <testcase name="RicknmortyapiService should call api with previousUrl when no empty" time="0.001" classname=".RicknmortyapiService"/>
+  <testcase name="RicknmortyapiService should call api with nextUrl when no empty" time="0.001" classname=".RicknmortyapiService"/>
+  <system-out>
+    <![CDATA[
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CharacterCardComponent } from "../character-card/character-card.component";
 import { Character } from '../../interfaces/character';
 import { RicknmortyapiService } from '../../services/ricknmortyapi.service';
+import { Info } from '../../interfaces/info';
 
 @Component({
   selector: 'CharactersTable',
@@ -14,7 +15,6 @@ export class CharactersTableComponent {
   hasNextPage: boolean = false;
   hasPreviousPage: boolean = false;
   characters: Character[] = [];
-  public currentPage: number = 1;
 
   constructor(private api: RicknmortyapiService) { }
 
@@ -26,9 +26,7 @@ export class CharactersTableComponent {
     this.api.getNextPage().subscribe(
      (res) => {
       this.characters = res.characters;
-      this.api.nextUrl = res.info.next
-      this.hasNextPage = !!res.info.next
-      this.hasPreviousPage = !!res.info.prev
+      this.setPreviousAndNextUrls(res.info)
      }
     );
   }
@@ -37,10 +35,14 @@ export class CharactersTableComponent {
     this.api.getPreviousPage().subscribe(
       (res) => {
        this.characters = res.characters;
-       this.api.previousUrl = res.info.prev
-       this.hasPreviousPage = !!res.info.prev
+       this.setPreviousAndNextUrls(res.info)
       }
      );
+  }
+
+  private setPreviousAndNextUrls(info: Info) {
+    this.hasNextPage = !!info.next
+    this.hasPreviousPage = !!info.prev
   }
 
 }

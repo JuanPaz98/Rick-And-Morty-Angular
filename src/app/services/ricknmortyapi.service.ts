@@ -18,11 +18,27 @@ export class RicknmortyapiService {
   constructor(private http: HttpClient) { }
 
   getNextPage(): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.nextUrl ? this.nextUrl : ApiUrl)
+    return this.http.get<ApiResponse>(this.nextUrl ? this.nextUrl : ApiUrl).pipe(
+      map((res) => this.updateUrls(res))
+    )
   }
 
   getPreviousPage(): Observable<ApiResponse> {
-    return this.http.get<ApiResponse>(this.previousUrl ? this.previousUrl : ApiUrl)
+    return this.http.get<ApiResponse>(this.previousUrl ? this.previousUrl : ApiUrl).pipe(
+      map((res) => this.updateUrls(res))
+    )
+  }
+
+  private updateUrls(res: any): ApiResponse {
+    this.nextUrl = res.info.next || '';
+    this.previousUrl = res.info.prev || '';
+    
+    return {
+      info: res.info,
+      hasNextPage: !!res.info.next,
+      hasPreviousPage: !!res.info.prev,
+      characters: res.results
+    };
   }
 }
 

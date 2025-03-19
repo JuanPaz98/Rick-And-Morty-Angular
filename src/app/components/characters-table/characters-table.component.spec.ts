@@ -12,6 +12,7 @@ describe('CharactersTableComponent', () => {
   let apiServiceMock: jasmine.SpyObj<RicknmortyapiService>;
 
   const mockData: ApiResponse = {
+    info: {count: 10, next: 'next', pages: 10, prev: null},
     hasNextPage: true,
     hasPreviousPage: false,
     characters: [{ "id": 1, "name": "Rick Sanchez1", "status": "Alive1", "species": "Human1", "image": "1.jpeg" }]

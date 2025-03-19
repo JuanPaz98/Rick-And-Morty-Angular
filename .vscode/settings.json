@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/92dd0a5e-a1c4-4263-aac6-be9f2a6192c0/resourceGroups/Angular-unosquare/providers/Microsoft.Web/sites/unosquare-test",
+    "appService.deploySubpath": "."
+}
