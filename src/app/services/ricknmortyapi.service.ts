@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ApiResponse } from '../interfaces/api-response';
-import { Character } from '../interfaces/character';
 
 
 
@@ -27,6 +26,13 @@ export class RicknmortyapiService {
     return this.http.get<ApiResponse>(this.previousUrl ? this.previousUrl : ApiUrl).pipe(
       map((res) => this.updateUrls(res))
     )
+  }
+
+  public searchCharacter(name: string): Observable<ApiResponse> {
+    const url = `${ApiUrl}?name=${name}`;
+    return this.http.get<ApiResponse>(url).pipe(
+      map((res) => this.updateUrls(res))
+    );
   }
 
   private updateUrls(res: any): ApiResponse {

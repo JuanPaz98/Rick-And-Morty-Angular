@@ -1,17 +1,37 @@
 <div>
-    <div class="row mb-3 mt-3">
-        <button class="btn btn-primary" [disabled]="!hasPreviousPage" (click)="fetchPreviousPage()">Previous Page</button>
-        <div class="col-6"></div>
-        <button class="btn btn-primary" [disabled]="!hasNextPage" (click)="fetchNextPage()">Next Page</button>
+    <div class="row mb-3 mt-3 ml-0 mr-3 justify-content-between">
+        <button class="btn btn-primary" [disabled]="!hasPreviousPage || characters.length === 0" (click)="fetchPreviousPage()">Previous Page</button>
+        <button class="btn btn-primary" [disabled]="!hasNextPage || characters.length === 0" (click)="fetchNextPage()">Next Page</button>
     </div>
-    <div class="row">
-        @for (character of characters; track $index) {
-            <CharacterCard [character]="character"></CharacterCard>
-        }
+    <div class="w-100">
+        <div class="mb-3 mr-3">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search a character..."
+              [(ngModel)]="searchTerm"
+              (ngModelChange)="onSearchChange()"
+            />
+        </div>
     </div>
-    <div class="row mb-3 mt-3">
-        <button class="btn btn-primary" [disabled]="!hasPreviousPage" (click)="fetchPreviousPage()">Previous Page</button>
-        <div class="col-6"></div>
-        <button class="btn btn-primary" [disabled]="!hasNextPage" (click)="fetchNextPage()">Next Page</button>
+
+    @if(characters.length === 0) {
+        <div class="text-center my-4 not-found-container">
+            <h5>No characters found</h5>
+        </div>
+    }
+    @else {
+        <div class="row justify-content-between">
+            @for (character of characters; track $index) {
+                <div class="col-12 col-md-4 col-lg-3 mb-3">
+                    <CharacterCard [character]="character"></CharacterCard>
+                </div>
+            }
+        </div>
+    }
+
+    <div class="row mb-3 mt-3 ml-0 mr-3 justify-content-between">
+        <button class="btn btn-primary" [disabled]="!hasPreviousPage || characters.length === 0" (click)="fetchPreviousPage()">Previous Page</button>
+        <button class="btn btn-primary" [disabled]="!hasNextPage || characters.length === 0" (click)="fetchNextPage()">Next Page</button>
     </div>
 </div>
