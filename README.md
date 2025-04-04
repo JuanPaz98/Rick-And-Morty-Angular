@@ -29,9 +29,12 @@ Clonacion e instalación del proyecto:
 git clone https://github.com/tu-usuario/rick-and-morty-angular-app.git
 cd rick-and-morty-angular-app
 
+Instala las dependencias
 npm install
 
+Ejecuta la aplicación
 ng serve
 
+Abre el navegador con la siguiente ruta:
 http://localhost:4200
 
